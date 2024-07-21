@@ -1,1 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-size: 16px;
+  @apply text-gray-800;
+}
+h1 {
+  @apply text-xl mt-2 mb-1 ml-2 font-semibold;
+}
+.warning {
+  @apply bg-orange-300 py-2 px-4 rounded-md;
+}
+.btn-primary {
+  @apply bg-blue-500 text-white py-2 px-4 hover:bg-blue-400 rounded-md;
+}
+.form-input {
+  @apply pl-4 pr-10 py-2 leading-none rounded-lg shadow-sm text-gray-600;
+}
+.form-label {
+  @apply font-medium mb-1 text-gray-700 block;
+}
+.shipment-grid {
+  display: grid;
+  grid-template-columns: 1fr 8em 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  @apply border-b-gray-200 border-b py-2;
+}
+.list-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  &--image img{
+    width: 50px;
+    height: 50px;
+  }
+  &--content{
+    display: flex;
+    flex: 0.9;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 10px;
+  }
+  &--button{
+    cursor: pointer;
+    border: 0;
+    border-radius: 7px;
+    padding: 10px;
+  }
+}

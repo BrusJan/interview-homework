@@ -1,0 +1,15 @@
+<div class="shipment-grid ml-2 font-semibold">
+  <div>Company Name</div>
+  <div>Scheduled Date</div>
+  <div>Status</div>
+  <div>Shipped Items</div>
+</div>
+<div class="shipment-grid ml-2" *ngFor="let shipment of shipments">
+  <div>{{ shipment.companyName}}</div>
+  <div>{{ shipment.scheduledDate | date }}</div>
+  <div>{{ shipment.status }}</div>
+  <div>
+    <app-item-summary *ngFor="let item of shipment.items" [item]="item">
+    </app-item-summary>
+  </div>
+</div>

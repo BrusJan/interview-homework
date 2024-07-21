@@ -1,0 +1,26 @@
+<form [formGroup]="shipmentForm" class="flex flex-col gap-4 w-full p-6">
+  <div class="flex flex-col md:flex-row gap-2">
+    <div class="flex gap-2 items-center">
+      <label for="companyName" class="form-label w-28 md:w-auto">Company Name</label>
+      <input id="name" type="text" formControlName="companyName" class="form-input w-52 md:w-auto">
+    </div>
+    <div class="flex gap-2 items-center">
+      <label for="datepicker" class="form-label w-28 md:w-auto">Scheduled Date</label>
+      <app-date-picker (dateChange)="onDateChange($event)" class="w-52 md:w-auto"></app-date-picker>
+    </div>
+    <div class="flex gap-2 items-center">
+      <label for="status" class="form-label w-28 md:w-auto">Status</label>
+      <select id="status" [disabled]="true" class="form-input w-52 md:w-auto">
+        <option value="CREATED" selected>Created</option>
+        <option value="PREPARED">Prepared</option>
+        <option value="SHIPPED">Shipped</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <app-item-summary *ngFor="let item of itemsToAdd" [item]="item"></app-item-summary>
+  </div>
+  <div class="flex gap-4">
+    <button class="btn-primary ml-[7.5rem] md:ml-0 w-52" (click)="createShipment()">Create Shipment</button>
+  </div>
+</form>

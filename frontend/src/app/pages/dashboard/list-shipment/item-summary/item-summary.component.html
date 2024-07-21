@@ -1,0 +1,5 @@
+<div *ngIf="internalItem" class="flex w-full gap-1">
+  <div>{{ internalItem.name }}</div>
+  <div class="flex-1 text-right text-orange-600">{{ internalItem.quantity }}</div>
+  <div class="w-12 text-right font-semibold text-green-700">{{ internalItem.unitPrice | currency:'EUR' }}</div>
+</div>

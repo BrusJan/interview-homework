@@ -1,0 +1,18 @@
+<main class="flex flex-col gap-4">
+    <div class="dashboard">
+        <h1>Warehouse status</h1>
+        <p class="warning" *ngIf="!items || !items.length">No items in warehouse.</p>
+        <app-list-item *ngFor="let item of items" [item]="item" (addToShipment)="onAddToShipment($event)">
+        </app-list-item>
+    </div>
+    <div class="bg-gray-100 rounded-md py-2">
+        <h1>Unsaved shipment</h1>
+        <app-shipment-form (shipmentCreated)="onShipmentCreated($event)" [itemsToAdd]="itemsToAdd"></app-shipment-form>
+    </div>
+    <div class="shipments-list">
+        <h1>Shipments</h1>
+        <p class="warning" *ngIf="!items || !items.length">No shipments.</p>
+        <app-list-shipment [shipments]="shipments">
+        </app-list-shipment>
+    </div>
+</main>
