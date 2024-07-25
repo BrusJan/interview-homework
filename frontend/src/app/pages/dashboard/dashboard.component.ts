@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListItemComponent } from "./list-item/list-item.component";
-import { ICreateShipmentDTO, IProduct, IShipment, IShipmentItem } from "../../core/models/warehouse-models";
+import { IProduct, IShipment, IShipmentItem } from "../../core/models/warehouse-models";
 import { WarehouseService } from 'src/app/core/services/warehouse.service';
 import { BaseComponent } from 'src/app/core/base-component/base.component';
 import { ListShipmentComponent } from './list-shipment/list-shipment.component';

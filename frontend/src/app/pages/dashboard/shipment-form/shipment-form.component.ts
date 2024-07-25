@@ -41,10 +41,10 @@ export class ShipmentFormComponent extends BaseComponent {
       scheduledDate: this.shipmentForm.get('scheduledDate')?.value!,
       items: this.itemsToAdd,
     }
-    this.warehouseService.createShipment(shipment).subscribe(shipment => {
+    this.subscriptions.push(this.warehouseService.createShipment(shipment).subscribe(shipment => {
       this.shipmentCreated.emit(shipment);
       this.shipmentForm.reset();
-    })
+    }));
   }
 
 }
